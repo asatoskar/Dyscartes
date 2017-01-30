@@ -1,0 +1,75 @@
+<html>
+<head>
+<style>
+.h{
+	float:left;
+}
+.i{
+	margin-left:250px;
+}
+.out{
+	margin-left:250px;
+	display: inline-block
+}
+}
+</style>
+
+ <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+	
+</head>
+
+<body>
+
+<div class="out">
+
+<div class="i">
+
+<div class="h" id="1st">
+	<p style="font-size:100px">45</p>
+</div>
+
+<div class="h">
+	
+    
+    <p>
+        <img alt="" src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-5Uc-DpDyZS8%2FVF0ue017UqI%2FAAAAAAAAH-w%2FA96CCd0p9u4%2Fs1600%2Fcartoon%252Bshark%252B11.jpg&f=1" 
+            style="height: 200px; width: 200px" id="imgClickAndChange" onclick="changeImage()"  />
+    </p>
+
+</div>
+
+<div class="h" id="2nd">
+	<p style="font-size:100px">46</p>
+</div>
+
+
+</div>
+
+
+
+
+<script language="javascript">
+    function changeImage() {
+
+        if (document.getElementById("imgClickAndChange").src == "https://images.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-5Uc-DpDyZS8%2FVF0ue017UqI%2FAAAAAAAAH-w%2FA96CCd0p9u4%2Fs1600%2Fcartoon%252Bshark%252B11.jpg&f=1") 
+        {
+			         
+            document.getElementById("imgClickAndChange").src = "http://www167.lunapic.com/do-not-link-here-use-hosting-instead/147472256293947?2976121469";
+            responsiveVoice.speak("Right anser!");
+
+        }
+        else 
+        {
+			
+            document.getElementById("imgClickAndChange").src = "https://images.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-5Uc-DpDyZS8%2FVF0ue017UqI%2FAAAAAAAAH-w%2FA96CCd0p9u4%2Fs1600%2Fcartoon%252Bshark%252B11.jpg&f=1";
+            responsiveVoice.speak("Eat the larger number!");
+        }
+    }
+</script>
+
+</body>
+
+</html>

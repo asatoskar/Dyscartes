@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script language="javascript">
+    function changeImage() {
+
+        if (document.getElementById("imgClickAndChange").src == "nor.jpg") 
+        {
+            document.getElementById("imgClickAndChange").src = "https://images.duckduckgo.com/iu/?u=http%3A%2F%2F0.s3.envato.com%2Ffiles%2F51628801%2Fpreview.jpg&f=1";
+        }
+        else 
+        {
+            document.getElementById("imgClickAndChange").src = "nor.jpg";
+        }
+    }
+</script>
+</head>
+
+<body>
+
+    <p>
+        <img alt="" src="nor.jpg" 
+            style="height: 85px; width: 198px" id="imgClickAndChange" onclick="changeImage()"  />
+</p>
+
+
+</body>
+</html>

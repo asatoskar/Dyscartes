@@ -1,0 +1,185 @@
+<html>
+<head>
+	
+<style>
+canvas{
+	width:40%;
+}
+
+</style>	
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script>
+
+function numrender(coordarr)
+{
+	var numshape = new createjs.Shape();
+	numshape.graphics.beginStroke("#000000").beginFill("#B8002E").drawRect(coordarr[0],coordarr[1],coordarr[2],coordarr[3]);
+	numshape.graphics.beginStroke("#000000").beginFill("#FF6633").drawRect(coordarr[4],coordarr[5],coordarr[6],coordarr[7]);
+	numshape.graphics.beginStroke("#000000").beginFill("#FFCC33").drawRect(coordarr[8],coordarr[9],coordarr[10],coordarr[11]);
+	return numshape;
+}
+
+function choose(num)
+{
+var arr=new Array();
+switch(num)
+{	case 0: arr=[0,0,0,0,0,0,0,0,0,0,0,0];
+			break;
+	case 1: arr=[0,0,40,40,0,0,0,0,0,0,0,0];
+			break;
+	case 2: arr=[0,0,40,80,0,0,0,0,0,0,0,0];
+			break;
+	case 3: arr=[0,0,40,80,40,40,40,40,0,0,0,0];
+			break;
+	case 4: arr=[0,0,80,80,0,0,0,0,0,0,0,0];
+			break;
+	case 5: arr=[0,40,80,80,0,0,0,0,40,0,40,40];
+			break;
+	case 6: arr=[0,0,80,120,0,0,0,0,0,0,0,0,0];
+			break;
+	case 7: arr=[0,0,80,120,80,0,40,40,0,0,0,0];
+			break;
+	case 8: arr=[0,0,160,80,0,0,0,0,0,0,0,0];
+			break;
+	case 9: arr=[0,40,160,80,120,0,40,40,0,0,0,0];
+			break;
+	case 10: arr=[0,0,0,200,80,0,0,0,0,0,0,0];
+			break;
+	case 11: arr=[0,0,40,40,0,40,200,120,0,0,0,0];
+			break;
+	case 12: arr=[0,0,80,40,0,40,200,120,0,0,0,0];
+			break;
+	case 13: arr=[0,0,40,40,0,40,80,40,0,80,200,80];
+			break;
+	case 14: arr=[0,0,80,80,0,0,0,0,0,80,200,80];
+			break;
+	case 15: arr=[0,0,80,80,0,80,200,80,80,40,40,40];
+			break;
+	case 16: arr=[0,0,120,80,0,0,0,0,0,80,200,80];
+			break;
+	case 17: arr=[0,0,120,80,120,40,40,40,0,80,200,80];
+			break;
+	case 18: arr=[0,0,160,80,0,0,0,0,0,80,200,80];
+			break;
+	case 19: arr=[0,0,160,40,0,0,0,0,0,40,200,120];
+			break;	
+	default: window.alert("Switch case error!");
+}
+
+return arr;
+}
+
+
+window.onload=function(){
+var parent = document.getElementById("dispCalc");
+var newcanvas;
+var stage;
+var shape;
+var counter=0;
+var i=0;	
+var a=7;
+var b=8;
+var diga=0;
+var digb=0;
+var digsum=0;
+var carry=0;
+
+
+while(a>0||b>0)
+{
+counter++;
+diga=a%10;
+
+//display digit of A
+newcanvas = document.createElement("canvas");
+newcanvas.id = "numa"+counter;
+parent.appendChild(newcanvas);
+stage = new createjs.Stage("numa"+counter);
+shape = numrender(choose(parseInt(diga)));
+shape.x=0;
+shape.y=0;
+stage.addChild(shape);
+stage.update();
+
+//display digit of B
+digb=b%10;
+
+newcanvas = document.createElement("canvas");
+newcanvas.id = "numb"+counter;
+parent.appendChild(newcanvas);
+stage = new createjs.Stage("numb"+counter);
+shape = numrender(choose(parseInt(digb)));
+shape.x=0;
+shape.y=0;
+stage.addChild(shape);
+stage.update();
+
+
+digsum=diga+digb+carry;
+
+//display sum of digits
+newcanvas = document.createElement("canvas");
+newcanvas.id = "numsum"+counter;
+parent.appendChild(newcanvas);
+stage = new createjs.Stage("numsum"+counter);
+shape = numrender(choose(parseInt(digsum)));
+shape.x=0;
+shape.y=0;
+stage.addChild(shape);
+stage.update();
+
+createjs.Tween.get(shape).to({alpha: 0.0, x: -200, y: -200, scaleX: 0.1,scaleY: 0.1}, 10000, createjs.Ease.getPowInOut(2));
+          
+        createjs.Ticker.setFPS(10);
+        createjs.Ticker.addEventListener("tick", stage);
+
+//reset carry
+carry=0;
+
+
+if(digsum>=10)
+{
+digsum=digsum-10;
+
+//display new digsum		
+newcanvas = document.createElement("canvas");
+newcanvas.id = "numsumnew"+counter;
+parent.appendChild(newcanvas);
+stage = new createjs.Stage("numsumnew"+counter);
+shape = numrender(choose(parseInt(digsum)));
+shape.x=0;
+shape.y=0;
+stage.addChild(shape);
+stage.update();
+
+//display carry
+newcanvas = document.createElement("canvas");
+newcanvas.id = "numcarry"+counter;
+parent.appendChild(newcanvas);
+stage = new createjs.Stage("numcarry"+counter);
+shape = numrender(choose(parseInt(1)));
+shape.x=0;
+shape.y=0;
+stage.addChild(shape);
+stage.update();
+        
+		
+
+
+
+carry=1;
+
+
+}
+
+a=parseInt(a/10);
+b=parseInt(b/10);
+}
+}
+
+</script>
+</head>
+  <body>
+    <div id="dispCalc" width="800" height="800"></div>
+  </body>
+  </html>

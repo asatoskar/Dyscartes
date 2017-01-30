@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+	
+	
+	<script>
+$(document).ready(function(){
+    $("#w").hover(function(){
+		
+        $(this).css("background-color", "yellow");
+        responsiveVoice.speak("83");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+    
+    $("#x").hover(function(){
+		
+        $(this).css("background-color", "yellow");
+        responsiveVoice.speak("38");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+    
+    $("#y").hover(function(){
+		
+        $(this).css("background-color", "yellow");
+        responsiveVoice.speak("163");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+    
+    $("#z").hover(function(){
+		
+        $(this).css("background-color", "yellow");
+        responsiveVoice.speak("87");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+    
+    $("#a").hover(function(){
+		
+        $(this).css("background-color", "yellow");
+        responsiveVoice.speak("53");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+    
+    $("#b").hover(function(){
+		
+        $(this).css("background-color", "yellow");
+        responsiveVoice.speak("138");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+    
+});
+</script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="carouselr.css" rel="stylesheet">
+  </head>
+
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+<!-- <img src="data:image/png;base64,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" alt="rol" style="width:300px;height:200px;margin:0 auto;margin-top:100px;margin-left:500px;"> -->
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette" style="margin-left:150px;">
+       
+        <div class="col-md-5" id="w">
+          <p style="font-size:285px;border:1px solid black;position:centre;text-align:center;background-color:green;color:white;">83</p>
+        </div>
+        <div class="col-md-5" id="x">
+         <p style="font-size:285px;border:1px solid black;position:centre;text-align:center;background-color:blue;color:white;">38</p>
+        </div>
+        
+        <div class="col-md-5" id="y">
+          <p style="font-size:285px;border:1px solid black;position:centre;text-align:center;background-color:green;color:white;">163</p>
+        </div>
+        <div class="col-md-5" id="z">
+         <p style="font-size:285px;border:1px solid black;position:centre;text-align:center;background-color:blue;color:white;">87</p>
+        </div>
+        
+        <div class="col-md-5" id="a">
+          <p style="font-size:285px;border:1px solid black;position:centre;text-align:center;background-color:green;color:white;">53</p>
+        </div>
+        <div class="col-md-5" id="b">
+         <p style="font-size:285px;border:1px solid black;position:centre;text-align:center;background-color:blue;color:white;">138</p>
+        </div>
+        
+        
+      </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

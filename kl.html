@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload=function()
+{
+function firstside(num1,num2)
+{
+var diff=num1-num2;
+if(diff>0)
+document.getElementById('operator').attr('src','/home/ananya/files/Pictures/64013553.jpg');	
+}
+
+function secondside(num1,num2)
+{
+var diff=num1-num2;
+if(diff<0)
+document.querySelector('#operator').attr('src','/home/ananya/files/Pictures/64013553.jpg');	
+}
+
+function revertorig(=)
+{
+document.querySelector('#operator').attr('src','/home/ananya/files/Pictures/how-the-dog-ate-my-homework-excuses-start-74014.jpg');	
+}
+
+}
+
+	
+
+</script>
+</head>
+<body>
+	
+<div id="compare-container">
+<div class="sub" onMouseOver="firstside(5,4);" onMouseOut="revertorig();"><img src="/home/ananya/files/Pictures/69683281.jpg"></div>
+<div class="sub"><img id="operator" src="/home/ananya/files/Pictures/how-the-dog-ate-my-homework-excuses-start-74014.jpg"></div>
+<div class="sub"onMouseOver="secondside(5,4);" onMouseOut="revertorig();"><img src="/home/ananya/files/Pictures/69683281.jpg"></div>
+
+</div>
+</div>
+
+</body>
+</html>

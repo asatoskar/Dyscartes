@@ -1,0 +1,26 @@
+<html>
+<head>
+<script>
+funtion ReqListener()
+{
+console.log(this.responseText);
+}
+
+
+var connObj = new XMLHttpRequest();
+
+connObj.onload=function()
+{
+alert(this.responseText);
+}
+connObj.open("GET","/selectQue.php?qno=1",true);
+connObj.send();
+
+</script>
+</head>
+
+<body>
+<div id="result" width="500" height="200">Text here</div>
+<body>
+
+</html>
